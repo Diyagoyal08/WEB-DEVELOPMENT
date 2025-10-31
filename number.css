@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0d1b2a, #1b263b, #2b2d42);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 30px;
+}
+
+/* Main Container */
+.main {
+  width: 95%;
+  max-width: 1000px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px 40px;
+  box-shadow: 0 0 25px rgba(180, 0, 255, 0.4);
+}
+
+/* Header */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #b721ff, #7a00ff, #c471ed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.back-btn {
+  background: linear-gradient(90deg, #b721ff, #c471ed);
+  border: none;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #b721ff;
+}
+
+/* Content */
+.content {
+  text-align: center;
+}
+
+.content h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #b721ff, #7a00ff, #c471ed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.content p {
+  font-size: 16px;
+  color: #ccc;
+  margin-bottom: 25px;
+}
+
+/* Game box */
+.game-box {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(200, 0, 255, 0.3);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  margin-bottom: 25px;
+  box-shadow: 0 0 20px rgba(200, 0, 255, 0.4);
+}
+
+#guessInput {
+  width: 60%;
+  max-width: 250px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #c471ed;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  outline: none;
+}
+
+#guessInput::placeholder {
+  color: #aaa;
+}
+
+.check-btn {
+  background: linear-gradient(90deg, #b721ff, #7a00ff);
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  margin-left: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(180, 0, 255, 0.4);
+}
+
+.check-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #c471ed;
+}
+
+#message {
+  font-size: 18px;
+  margin-top: 15px;
+  color: #e1baff;
+  font-weight: 500;
+}
+
+.stats {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  color: #e1baff;
+  font-weight: 500;
+}
+
+/* Reset button */
+.reset-btn {
+  background: linear-gradient(90deg, #7a00ff, #b721ff);
+  border: none;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(180, 0, 255, 0.4);
+}
+
+.reset-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #b721ff;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  #guessInput {
+    width: 80%;
+  }
+}
