@@ -1,0 +1,163 @@
+ /* SIGN UP PAGE - Light Aqua Theme (same layout as Sign In) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #0a0f24, #142850);
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.main1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.logo1 {
+  font-size: 48px;
+}
+
+h1 {
+  font-size: 42px;
+  background: linear-gradient(90deg, #5de6de, #b58ecc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  color: #d6faff;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+/* CONTAINER */
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.login {
+  width: 380px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(185, 255, 250, 0.3);
+  padding: 35px 30px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(185, 255, 250, 0.3);
+}
+
+.logo2 {
+  background: linear-gradient(135deg, #5de6de, #b58ecc);
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  font-size: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 15px;
+  box-shadow: 0 0 15px rgba(185, 255, 250, 0.6);
+}
+
+.login h2 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.login h4 {
+  font-size: 14px;
+  color: #bdf8ff;
+  margin-bottom: 20px;
+}
+
+/* INPUT FIELDS */
+.user-name {
+  text-align: left;
+  margin-bottom: 18px;
+}
+
+.user-name label {
+  font-size: 14px;
+  color: #e0ffff;
+  font-weight: 600;
+}
+
+.user-name input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1.8px solid #5de6de;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  outline: none;
+  transition: 0.3s;
+}
+
+.user-name input:focus {
+  border-color: #b58ecc;
+  box-shadow: 0 0 8px #a1fff7;
+}
+
+.user-name input::placeholder {
+  color: #c2f5ff;
+}
+
+/* BUTTON */
+.gradient-btn {
+  background: linear-gradient(90deg, #5de6de, #b58ecc);
+  border: none;
+  color: #001f3f;
+  font-weight: 600;
+  padding: 12px 35px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.gradient-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #b58ecc;
+}
+
+/* LINK */
+p {
+  margin-top: 15px;
+  color: #e0ffff;
+  font-size: 14px;
+}
+
+p a {
+  color: #b58ecc;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+hr {
+  margin: 20px 0;
+  opacity: 0.3;
+}

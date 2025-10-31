@@ -1,0 +1,41 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In | Skill Quest</title>
+  <link rel="stylesheet" href="signin.css">
+</head>
+<body>
+  <header>
+    <div class="main1">
+      <div class="logo1">🤖</div>
+      <h1>SKILL QUEST</h1> 
+    </div>
+    <div class="logo1">🎮</div>
+    <h2 class="subtitle">Arcade</h2>
+  </header>
+
+  <section>
+    <div class="login">
+      <div class="logo2">🔐</div>
+      <h2>Welcome Back!</h2>
+      <h4>Sign in to continue your Quest</h4>
+      <form action="choose.html" method="post">
+        <div class="user-name"> 
+          <label for="signin-username">Username</label>
+          <input type="text" id="signin-username" placeholder="Enter your username" required>
+        </div>
+        <div class="user-name"> 
+          <label for="signin-password">Password</label>
+          <input type="password" id="signin-password" placeholder="Enter your password" required>
+        </div>
+        <button type="submit" class="gradient-btn">Sign In</button>
+      </form>
+      <p>Don’t have an account? <a href="signup.html">Sign Up</a></p>
+    </div>
+  </section>
+
+  <script src="login.js"></script>
+</body>
+</html>
