@@ -1,16 +1,16 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sign Up | Skill Quest</title>
-  <link rel="stylesheet" href="signup.css">
+  <link rel="stylesheet" href="signup.css" />
 </head>
 <body>
   <header>
     <div class="main1">
       <div class="logo1">🤖</div>
-      <h1>SKILL QUEST</h1> 
+      <h1>SKILL QUEST</h1>
     </div>
     <div class="logo1">🎮</div>
     <h2 class="subtitle">Arcade</h2>
@@ -21,25 +21,35 @@
       <div class="logo2">🧩</div>
       <h2>Create Account</h2>
       <h4>Join the adventure today!</h4>
-      <form action="signin.html" method="post">
-        <div class="user-name"> 
-          <label for="signup-username">Username</label>
-          <input type="text" id="signup-username" placeholder="Choose a username" required>
+
+      <!-- IMPORTANT: id="signupForm" and NO action attribute -->
+      <form id="signupForm" novalidate>
+        <div class="user-name">
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="Choose a username" required />
         </div>
-        <div class="user-name"> 
-          <label for="signup-email">Email</label>
-          <input type="email" id="signup-email" placeholder="Enter your email" required>
+
+        <div class="user-name">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter your email" required />
         </div>
-        <div class="user-name"> 
-          <label for="signup-password">Password</label>
-          <input type="password" id="signup-password" placeholder="Create a password" required>
+
+        <div class="user-name">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Create a password" required />
         </div>
-        <button type="submit" class="gradient-btn">Sign Up</button>
+
+        <button type="submit" class="gradient-btn">Sign Up
+          
+        </button>
+        <p id="message" aria-live="polite"></p>
       </form>
+
       <p>Already have an account? <a href="signin.html">Sign In</a></p>
     </div>
   </section>
 
-  <script src="login.js"></script>
+  <!-- script at the end so DOM exists -->
+  <script src="signup.js"></script>
 </body>
 </html>
