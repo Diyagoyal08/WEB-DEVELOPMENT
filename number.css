@@ -1,4 +1,4 @@
-* {
+ * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -15,7 +15,6 @@ body {
   padding: 30px;
 }
 
-/* Main Container */
 .main {
   width: 95%;
   max-width: 1000px;
@@ -26,7 +25,6 @@ body {
   box-shadow: 0 0 25px rgba(180, 0, 255, 0.4);
 }
 
-/* Header */
 .topbar {
   display: flex;
   justify-content: space-between;
@@ -51,15 +49,13 @@ body {
   font-size: 15px;
   font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
-
 .back-btn:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px #b721ff;
 }
 
-/* Content */
 .content {
   text-align: center;
 }
@@ -78,7 +74,6 @@ body {
   margin-bottom: 25px;
 }
 
-/* Game box */
 .game-box {
   background: rgba(255, 255, 255, 0.1);
   border: 2px solid rgba(200, 0, 255, 0.3);
@@ -99,11 +94,6 @@ body {
   color: #fff;
   text-align: center;
   font-size: 16px;
-  outline: none;
-}
-
-#guessInput::placeholder {
-  color: #aaa;
 }
 
 .check-btn {
@@ -115,13 +105,10 @@ body {
   border-radius: 10px;
   cursor: pointer;
   font-weight: bold;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 15px rgba(180, 0, 255, 0.4);
+  transition: 0.3s;
 }
-
 .check-btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 25px #c471ed;
 }
 
 #message {
@@ -140,7 +127,6 @@ body {
   font-weight: 500;
 }
 
-/* Reset button */
 .reset-btn {
   background: linear-gradient(90deg, #7a00ff, #b721ff);
   border: none;
@@ -150,18 +136,8 @@ body {
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 20px rgba(180, 0, 255, 0.4);
+  transition: 0.3s;
 }
-
 .reset-btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 30px #b721ff;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  #guessInput {
-    width: 80%;
-  }
 }

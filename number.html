@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -13,9 +13,9 @@
         <span class="logo">🎯 Number Guess</span>
       </div>
       <div class="right">
-         <a href="choose.html"> 
-        <button class="back-btn">⬅ Back</button>
-         </a>
+        <a href="choose.html">
+          <button class="back-btn">⬅ Back</button>
+        </a>
       </div>
     </header>
 
@@ -27,14 +27,17 @@
         <input type="number" id="guessInput" placeholder="Enter your guess..." />
         <button class="check-btn">Check</button>
         <p id="message">Start guessing!</p>
+
         <div class="stats">
-          <span>Attempts: <b>0</b></span>
-          <span>Best Score: <b>--</b></span>
+          <span>Attempts: <b id="attemptCount">0</b>/10</span>
+          <span>XP Earned: <b id="xpScore">0</b></span>
         </div>
       </div>
 
       <button class="reset-btn">🔄 Restart</button>
     </section>
   </div>
+
+  <script src="number.js"></script>
 </body>
 </html>
