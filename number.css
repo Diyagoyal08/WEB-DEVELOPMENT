@@ -1,4 +1,4 @@
- * {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -36,6 +36,7 @@ body {
   font-size: 28px;
   font-weight: bold;
   background: linear-gradient(90deg, #b721ff, #7a00ff, #c471ed);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -64,6 +65,7 @@ body {
   font-size: 36px;
   margin-bottom: 10px;
   background: linear-gradient(90deg, #b721ff, #7a00ff, #c471ed);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

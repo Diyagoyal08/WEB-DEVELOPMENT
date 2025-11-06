@@ -1,0 +1,74 @@
+/* Minimal, bold landing */
+:root{
+  --bg-1:#031129;
+  --bg-2:#07203a;
+  --accent:#2dd4ff;
+  --card-bg:rgba(255,255,255,0.03);
+  --glass:rgba(255,255,255,0.04);
+  --muted:#9fb3c8;
+  --radius:14px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,var(--bg-1),var(--bg-2));
+  color:#e6f3ff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:36px;
+}
+
+/* hero layout */
+.hero{width:100%;max-width:920px;position:relative;display:flex;flex-direction:column;align-items:center;gap:28px}
+
+/* decorative horizontal lines (subtle neon) */
+.lines{
+  width:100%;
+  height:8px;
+  max-width:760px;
+  border-radius:8px;
+  background:
+    linear-gradient(90deg, transparent, rgba(45,212,255,0.06) 20%, rgba(45,212,255,0.18) 50%, rgba(45,212,255,0.06) 80%, transparent);
+  filter: blur(6px);
+  opacity:0.9;
+}
+
+/* primary card */
+.card{
+  width:100%;
+  max-width:720px;
+  padding:36px;
+  border-radius:var(--radius);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+  backdrop-filter: blur(6px);
+  text-align:center;
+}
+
+/* brand */
+.brand{font-weight:800;font-size:clamp(28px,6vw,56px);letter-spacing:-1px;margin-bottom:6px;color:var(--accent);text-shadow:0 6px 30px rgba(45,212,255,0.04)}
+.tagline{color:var(--muted);font-size:16px;margin-bottom:18px}
+
+/* CTAs */
+.cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.btn{
+  border:0;padding:12px 22px;border-radius:12px;font-weight:700;cursor:pointer;font-size:16px;min-width:140px;transition:transform .14s ease,box-shadow .14s ease;
+}
+.btn:focus{outline:3px solid rgba(45,212,255,0.12);outline-offset:3px}
+.primary{background:linear-gradient(90deg,var(--accent),#1fb6ff);color:#021127;box-shadow:0 14px 40px rgba(45,212,255,0.08)}
+.secondary{background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.04);backdrop-filter:blur(4px)}
+.btn:hover{transform:translateY(-4px)}
+
+/* note */
+.note{color:var(--muted);font-size:13px;margin-top:8px}
+
+/* responsive */
+@media (max-width:520px){
+  .card{padding:22px}
+  .brand{font-size:32px}
+  .btn{min-width:120px;padding:10px 16px}
+  .lines{max-width:88%}
+}
