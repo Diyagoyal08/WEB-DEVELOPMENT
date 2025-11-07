@@ -1,48 +1,45 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Typing Speed | Skill Quest</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>⌨️ Typing Speed Game</title>
   <link rel="stylesheet" href="typing.css" />
 </head>
 <body>
-  <div class="main">
-    <header class="topbar">
-      <div class="left">
-        <span class="logo">⌨️ Typing Speed</span>
-      </div>
-      <div class="right">
-         <a href="choose.html"> 
-        <button class="back-btn">⬅ Back</button>
-         </a>
-      </div>
+  <div class="container">
+    <header>
+      <h1>⌨️ Typing Speed Game</h1>
+      <p>Type as fast and accurately as you can!</p>
     </header>
 
-    <section class="content">
-      <h1>How Fast Can You Type?</h1>
-      <p>Type the passage below as quickly and accurately as possible.</p>
+    <div class="game-card">
+      <div id="sentence" class="sentence"></div>
 
-      <div class="game-box">
-        <div class="passage" id="passage">
-          The quick brown fox jumps over the lazy dog. Practice makes progress — keep typing and improve your speed!
-        </div>
+      <input type="text" id="typingInput" placeholder="Start typing here..." disabled />
 
-        <textarea id="typingArea" placeholder="Start typing here..." rows="5"></textarea>
-
-        <div class="controls">
-          <div class="left-controls">
-            <button class="start-btn">Start</button>
-            <button class="reset-btn">Reset</button>
-          </div>
-          <div class="stats">
-            <div>Time: <b id="time">00:00</b></div>
-            <div>WPM: <b id="wpm">0</b></div>
-            <div>Accuracy: <b id="acc">0%</b></div>
-          </div>
-        </div>
+      <div class="stats">
+        <div>Time Left: <span id="time">60</span>s</div>
+        <div>WPM: <span id="wpm">0</span></div>
+        <div>Accuracy: <span id="accuracy">100</span>%</div>
+        <div>XP Earned: <span id="xp">0</span></div>
       </div>
-    </section>
+
+      <div class="xp-bar-container">
+        <div class="xp-bar" id="xpBar"></div>
+      </div>
+
+      <div class="controls">
+        <button id="startBtn">Start Game</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+
+      <div class="total-xp">
+        Total XP: <span id="totalXP">0</span>
+      </div>
+    </div>
   </div>
+
+  <script src="typing.js"></script>
 </body>
 </html>
