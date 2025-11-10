@@ -1,3 +1,6 @@
+PLAN TO CREATE MANY WEB DEVELOPMENT PROJECTS ON THIS TO DEVELOP MY SKILLS
+
+
 🕹️ Skill Quest
 
 Welcome to Skill Quest, a web-based arcade platform that challenges your brain, reflexes, and typing skills — all in one place! 🎮
