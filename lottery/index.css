@@ -1,0 +1,85 @@
+ :root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --primary-color: #0077b6;
+  --hint-color: #ffb703;
+  --win-color: #38b000;
+  --lose-color: #d90429;
+}
+
+body.dark {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  
+  --primary-color: #00b4d8;
+  --hint-color: #f4a261;
+  --win-color: #90ee90;
+  --lose-color: #ff6b6b;
+}
+ 
+body.dark .player1 input {
+  background-color: white ;
+  color: #2c2c2c;
+  border: 1px solid #555;
+}
+
+body.dark .player1-box label {
+  color: #ddd;
+  background-color: white
+}
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: sans-serif;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  padding: 10px 15px;
+  background: var(--primary-color);
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input {
+  padding: 10px;
+  width: 150px;
+  margin: 10px;
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+}
+
+.section {
+  margin: 20px 0;
+}
+
+.hint {
+  margin-top: 10px;
+  color: var(--hint-color);
+  font-weight: bold;
+}
+
+.message.win {
+  color: var(--win-color);
+  font-weight: bold;
+}
+
+.message.lose {
+  color: var(--lose-color);
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+

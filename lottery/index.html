@@ -1,0 +1,37 @@
+ 
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lottery Game</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <header>
+    <h1>🎲 LOCK AND GUESS</h1>
+    <button id="themeToggle">🌙</button>
+  </header>
+
+  <main>
+    <div class="section">
+      <div class="player1"> 
+      <label for="secretInput">Player 1: Enter Secret 4-Digit Number</label>
+      <input type="password" id="secretInput" maxlength="4" />
+      <button id="lockBtn">Lock Number</button>
+      </div>
+    </div>
+
+    <div class="section hidden" id="guessSection">
+      <label for="guessInput">Player 2: Guess the 4-Digit Number</label>
+      <input type="text" id="guessInput" maxlength="4" />
+      <button id="guessBtn">Guess</button>
+      <div id="hint" class="hint"></div>
+      <div id="resultMessage" class="message"></div>
+      <button id="resetBtn">🔄 Reset Game</button>
+    </div>
+  </main>
+
+  <script src="index.js"></script>
+</body>
+</html>
