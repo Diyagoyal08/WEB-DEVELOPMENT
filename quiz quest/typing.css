@@ -1,0 +1,123 @@
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #1a0d2a, #2b1b3b);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  max-width: 700px;
+  width: 100%;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(209,108,255,0.2);
+}
+
+header h1 {
+  font-size: 36px;
+  color: #d16cff;
+  margin-bottom: 5px;
+}
+
+header p {
+  color: #dcdcdc;
+  margin-bottom: 20px;
+}
+
+.game-card {
+  background: rgba(255,255,255,0.05);
+  border: 2px solid #d16cff50;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 0 15px #d16cff20;
+}
+
+.sentence {
+  font-size: 20px;
+  margin-bottom: 15px;
+  line-height: 1.5;
+  color: #f0c4ff;
+  min-height: 60px;
+}
+
+#typingInput {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: 2px solid #d16cff50;
+  background: rgba(0,0,0,0.3);
+  color: #fff;
+  outline: none;
+  margin-bottom: 15px;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #ffc9ff;
+}
+
+.controls button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 15px;
+  background: linear-gradient(90deg, #d16cff, #ff55aa);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform 0.2s;
+}
+
+.controls button:hover {
+  transform: scale(1.05);
+}
+
+.xp-bar-container {
+  width: 100%;
+  height: 20px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.xp-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #ff55aa, #d16cff);
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+
+.sentence span.correct {
+  color: #00ff88;
+  transition: color 0.15s ease;
+}
+
+.sentence span.wrong {
+  color: #ff4c4c;
+  transition: color 0.15s ease;
+}
+
+.total-xp {
+  margin-top: 10px;
+  font-weight: 700;
+  color: #ffccff;
+}

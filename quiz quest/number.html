@@ -1,0 +1,44 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Number Guess | Skill Quest</title>
+  <link rel="stylesheet" href="number.css" />
+</head>
+<body>
+  <div class="main">
+    <header class="topbar">
+      <div class="left">
+        <span class="logo1">🎯</span>
+        <span class="logo"> Number Guess</span>
+      </div>
+      <div class="right">
+        <a href="choose.html">
+          <button class="back-btn">⬅ Back</button>
+        </a>
+      </div>
+    </header>
+
+    <section class="content">
+      <h1>Can You Guess the Number?</h1>
+      <p>Try to find the secret number between 1 and 100!</p>
+
+      <div class="game-box">
+        <input type="number" id="guessInput" placeholder="Enter your guess..." />
+        <button class="check-btn">Check</button>
+        <p id="message">Start guessing!</p>
+
+        <div class="stats">
+          <span>Attempts: <b id="attemptCount">0</b>/10</span>
+          <span>XP Earned: <b id="xpScore">0</b></span>
+        </div>
+      </div>
+
+      <button class="reset-btn">🔄 Restart</button>
+    </section>
+  </div>
+
+  <script src="number.js"></script>
+</body>
+</html>

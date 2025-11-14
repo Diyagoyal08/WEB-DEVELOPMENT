@@ -1,0 +1,45 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>⌨️ Typing Speed Game</title>
+  <link rel="stylesheet" href="typing.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>⌨️ Typing Speed Game</h1>
+      <p>Type as fast and accurately as you can!</p>
+    </header>
+
+    <div class="game-card">
+      <div id="sentence" class="sentence"></div>
+
+      <input type="text" id="typingInput" placeholder="Start typing here..." disabled />
+
+      <div class="stats">
+        <div>Time Left: <span id="time">60</span>s</div>
+        <div>WPM: <span id="wpm">0</span></div>
+        <div>Accuracy: <span id="accuracy">100</span>%</div>
+        <div>XP Earned: <span id="xp">0</span></div>
+      </div>
+
+      <div class="xp-bar-container">
+        <div class="xp-bar" id="xpBar"></div>
+      </div>
+
+      <div class="controls">
+        <button id="startBtn">Start Game</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+
+      <div class="total-xp">
+        Total XP: <span id="totalXP">0</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="typing.js"></script>
+</body>
+</html>
