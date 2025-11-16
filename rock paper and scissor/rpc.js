@@ -1,17 +1,34 @@
+// Get DOM elements
+const rockbtn = document.getElementById("rock"); 
+const paperbtn = document.getElementById("paper"); 
+const scissorsbtn = document.getElementById("scissors");
+const userdisplay = document.getElementById("user-choice");
+const computedisplay = document.getElementById("computer-choice");
+const resultdisplay = document.getElementById("result");
+const startbtn = document.getElementById("start-btn");
+const choices = document.querySelector(".choices");
+const results = document.querySelector(".results");
+
+ // Hide game area until start
+choices.style.display = "none";
+results.style.display = "none";
+
+// Start button
+startbtn.addEventListener("click", () => {
+    choices.style.display = "block";
+    results.style.display = "block";
+});
+
+// computer choice function
  function computerChoice() {
-    const choices = ['rock', 'paper', 'scissors'];
-    const randomIndex = Math.floor(Math.random() * choices.length);
-    return choices[randomIndex];
+    const options = ['rock', 'paper', 'scissors'];
+    return options [ Math.floor(Math.random() * options.length) ];
+
 } 
 
-function playerChoice() {
-    let input = prompt("Enter rock, paper, or scissors:").toLowerCase();
-    if (input !== 'rock' && input !== 'paper' && input !== 'scissors') {
-        alert("Invalid choice! Please choose rock, paper, or scissors.");
-        return playerChoice(); // retry
-    }
-    return input;
-}
+ 
+
+// determine winner function
 
 function determineWinner(player, computer) {
     if (player === computer) {
@@ -21,17 +38,22 @@ function determineWinner(player, computer) {
         (player === 'paper' && computer === 'rock') ||
         (player === 'scissors' && computer === 'paper')
     ) {
-        return "You win!";
+       return "You win!";
     } else {
-        return "Computer wins!";
+       return  "Computer wins!";
     }
 }
 
-function playGame() {
-    const player = playerChoice();
-    const computer = computerChoice();
-    const result = determineWinner(player, computer);
-    alert(`You chose: ${player}\nComputer chose: ${computer}\n${result}`);
-}
 
-playGame();
+function playGame(player) {
+     const computer = computerChoice(); 
+
+    userdisplay.textContent = `You chose: ${player}`;
+    computedisplay.textContent = `Computer chose: ${computer}`;
+    resultdisplay.textContent = `result: ${determineWinner(player, computer)}`;
+     
+}
+ 
+rockbtn.addEventListener("click", () => playGame('rock'));
+paperbtn.addEventListener("click", () => playGame('paper'));
+scissorsbtn.addEventListener("click", () => playGame('scissors'));
