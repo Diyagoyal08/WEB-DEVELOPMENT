@@ -1,0 +1,65 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#head{
+    text-align: center;
+    margin: 20px 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 40px;
+    color: #333;}
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+     
+    gap: 10px;
+    margin: 20px 0px;
+
+}
+.settings{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+     
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#colorPicker{
+    width: 100px;
+    height: 100px;
+    border: 1.5px solid rgb(0, 0, 0);;
+    padding: 0%;
+    cursor: pointer;
+    border-radius: 50%;
+    
+    appearance: none;
+    }
+#colorPicker::-webkit-color-swatch-wrapper {
+    padding: 0;
+border-radius: 50%;
+}
+#colorPicker::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
+}
+
+ #colorBtn , #rainbowBtn, #eraserBtn, #clearBtn{
+    width: 120px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+#container{
+    display: grid;
+    width: 500px;
+    height: 500px;
+    border: 2px solid black;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+}
