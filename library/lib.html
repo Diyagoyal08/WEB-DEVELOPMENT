@@ -7,31 +7,49 @@
     <link rel="stylesheet" href="lib.css">
 </head>
 
+<header>
+    <h1>Library</h1>
+    <button>Log in</button>
+</header>
+
 <body>
 
-    <header>
-        <h1>Library</h1>
-        <button>Log in</button>
-    </header>
-
-    
+    <!-- Book Display Section -->
     <section>
-        <div class="book">
-            books
+        <div class="book"></div>
+    </section>
+
+    <!-- Add Book Button -->
+    <section>
+        <button id="addBookBtn">+ Add book</button>
+    </section>
+
+    <!-- Popup Form -->
+    <section>
+        <div class="bookinfo" id="popup">
+            <form id="bookForm">
+                <h2>Add New Book</h2>
+
+                <label>Title</label>
+                <input type="text" id="titleInput">
+
+                <label>Author</label>
+                <input type="text" id="authorInput">
+
+                <label>Pages</label>
+                <input type="number" id="pagesInput">
+
+                <label>Read Status</label>
+                <input type="checkbox" id="readInput">
+
+                <div class="buttons">
+                    <button id="submitBook">Add</button>
+                    <button id="closePopup">Cancel</button>
+                </div>
+            </form>
         </div>
     </section>
 
-
-    <section>
-        <button class="add-book-btn">+ Add book</button>
-    </section>
-
-    
-    <section>
-        <div class="bookinfo">
-            pop up page
-        </div>
-    </section>
-
+    <script src="lib.js"></script>
 </body>
 </html>
