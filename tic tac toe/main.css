@@ -1,0 +1,87 @@
+ :root{
+--primary:#1A2B33;
+--secondary:#1E3640;
+--dark-cyan:#34C3BE;
+--lighten-yellow:#F2B138;
+--grey:#A9BEC8;
+}
+body{ 
+    background:var(--primary); 
+    height:100vh; color:white; 
+    font-family:"Poppins",sans-serif; 
+    display:flex; 
+    justify-content:center; 
+    align-items:center; 
+}
+.game-wrapper{ 
+    width:90%; 
+    max-width:650px; 
+}
+.top-bar{ 
+    display:flex; 
+    justify-content:space-between; 
+    align-items:center; 
+    margin-bottom:25px; 
+}
+.logo{ font-size:45px; 
+    display:flex; 
+    gap:10px; 
+}
+.logo span:nth-child(1){
+     color:var(--dark-cyan);
+     }
+.logo span:nth-child(2){ 
+    color:var(--lighten-yellow);
+ }
+.turn-box{ 
+    background:var(--secondary); 
+    padding:10px 25px; 
+    border-radius:10px; 
+    box-shadow:0 4px 10px rgba(0,0,0,0.3); 
+    font-weight:600;
+ }
+.turn-icon{ 
+    margin-right:8px;
+ }
+.reset-btn{ 
+    width:40px; 
+    height:40px; 
+    background:#c1d7e2;
+     border-radius:10px;
+     }
+.board{ 
+    display:grid; 
+    grid-template-columns:repeat(3,1fr); 
+    gap:18px; 
+    margin:25px 0;
+ }
+.cell{ 
+    width:120px; 
+    height:120px; 
+    background:var(--secondary); 
+    border-radius:10px; 
+    box-shadow:0 6px 10px rgba(0,0,0,0.5);
+ }
+.scoreboard{ 
+    display:flex; 
+    justify-content:space-between; 
+}
+.score{ 
+    width:31%;
+     background:#c1d7e2; 
+     padding:15px;
+      border-radius:10px;
+       text-align:center; 
+       font-weight:600;
+     }
+.score.x{ 
+    background:var(--dark-cyan); 
+}
+.score.o{ 
+    background:var(--lighten-yellow);
+ }
+.score span{ 
+    font-size:25px; 
+    font-weight:700; 
+}
+ 
