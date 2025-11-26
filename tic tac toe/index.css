@@ -26,17 +26,22 @@ body {
  }
 
 .logo { 
-    font-size: 55px; 
+    font-size: 60px; 
     display: flex; 
     justify-content: center; 
     gap: 15px; 
     margin-bottom: 35px;
+
  }
 .logo span:nth-child(1){ 
-    color: var(--dark-cyan); 
+    color: var(--dark-cyan);
+    font-size: 60px;
+    transform: scale(1.2); 
+    
 }
 .logo span:nth-child(2){
     color: var(--lighten-yellow);
+     transform: scale(1.1);
  }
 .card { 
     background: var(--secondary); 
