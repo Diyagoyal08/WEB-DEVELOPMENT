@@ -12,3 +12,4 @@
 
 const add5 = makeAdding(5);
 console.log(add5(2)) // logs 7
+//nothing is done just working
