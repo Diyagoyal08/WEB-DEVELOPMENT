@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TIC TAC TOE</title>
+     <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+     <div class="win">
+        <p class="winner hide">The Winner is</p>
+        <p class="x-text sign hide">X</p>
+        <p class="o-text sign hide">O</p>
+        <p class="winner draw hide">It's a Draw</p>
+    </div>
+
+    <div class="card">
+        <div class="item select">
+            <form action="" class="form">
+                <select name="levels" id="levels">
+                    <option value=" vs computer">vs computer</option>
+                    <option value="vs friend"> vs friend</option>
+                  
+                </select>
+            </form>
+        </div>
+        <div class="item player">
+            <button class="btn btn-p x">X</button>
+            <button class="btn btn-p o">O</button>
+        </div>
+        <div class="item board">
+            <button class="field"><p></p></button>
+            <button class="field"><p></p></button>
+            <button class="field no-r"><p></p></button>
+            <button class="field"><p></p></button>
+            <button class="field"><p></p></button>
+            <button class="field no-r"><p></p></button>
+            <button class="field no-b"><p></p></button>
+            <button class="field no-b"><p></p></button>
+            <button class="field no-b no-r"><p></p></button>
+        </div>
+        <div class="item rst">
+            <button class="btn restart">Restart</button>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>

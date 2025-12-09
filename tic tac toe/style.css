@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #111827;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* Winner Box */
+.win {
+    position: absolute;
+    top: 30px;
+    text-align: center;
+}
+
+.winner {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.sign {
+    font-size: 36px;
+    margin-top: 10px;
+}
+
+.hide {
+    display: none;
+}
+
+/* Main Card */
+.card {
+    background: #1f2933;
+    padding: 25px;
+    border-radius: 15px;
+    width: 340px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.6);
+}
+
+/* Select Level */
+.select {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#levels {
+     background-color: #aae1be;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+}
+
+/* Player Buttons */
+.player {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.btn-p {
+    width: 48%;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-p.x {
+    background: #3b82f6;
+    color: white;
+}
+
+.btn-p.o {
+    background: #ef4444;
+    color: white;
+}
+
+.btn-p:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* Game Board */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 15px 0;
+}
+
+.field {
+    height: 85px;
+    width: 100%;
+    font-size: 36px;
+    background: transparent;
+    color: white;
+    border: none;
+    border-right: 3px solid #9ca3af;
+    border-bottom: 3px solid #9ca3af;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Remove Right Border */
+.no-r {
+    border-right: none;
+}
+
+/* Remove Bottom Border */
+.no-b {
+    border-bottom: none;
+}
+
+/* Restart Button */
+.rst {
+    text-align: center;
+}
+
+.restart {
+    width: 100%;
+    padding: 12px;
+    background: #22c55e;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.restart:hover {
+    background: #16a34a;
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+    .card {
+        width: 90%;
+    }
+    .field {
+        height: 70px;
+        font-size: 28px;
+    }
+}
