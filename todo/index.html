@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pink Todo App</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+  <header class="top-bar">
+    <h1>My Todo</h1>
+    <button class="add-project-btn">+ New Project</button>
+  </header>
+
+  <main class="app">
+    
+    <!-- Projects -->
+    <aside class="projects">
+      <h2>Projects</h2>
+      <ul class="project-list">
+        <li class="active">Inbox</li>
+        <li>College</li>
+        <li>Personal</li>
+      </ul>
+    </aside>
+
+    <!-- Todos -->
+    <section class="todos">
+      <div class="todos-header">
+        <h2>Inbox</h2>
+        <button class="add-todo-btn">+ Add Todo</button>
+      </div>
+
+      <div class="todo-list">
+
+        <div class="todo-card high">
+          <div class="todo-main">
+            <h3>Finish assignment</h3>
+            <span class="due-date">Due: 10 Feb</span>
+          </div>
+          <span class="priority">High</span>
+        </div>
+
+        <div class="todo-card medium">
+          <div class="todo-main">
+            <h3>Buy groceries</h3>
+            <span class="due-date">Due: 12 Feb</span>
+          </div>
+          <span class="priority">Medium</span>
+        </div>
+
+        <div class="todo-card low">
+          <div class="todo-main">
+            <h3>Watch tutorial</h3>
+            <span class="due-date">Due: 15 Feb</span>
+          </div>
+          <span class="priority">Low</span>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
