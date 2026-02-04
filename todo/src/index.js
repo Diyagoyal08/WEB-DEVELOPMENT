@@ -1,37 +1,57 @@
- console.log("Step 3: JS loaded");
+import { createTodo } from "./logic/todo.js";
+import {
+  projects,
+  getCurrentProject,
+  setCurrentProject
+} from "./logic/project.js";
+import {
+  saveToLocalStorage,
+  loadFromLocalStorage
+} from "./storage/localStorage.js";
+import { renderTodos } from "./ui/render.js";
 
-// Select important DOM elements
-const addTodoBtn = document.querySelector(".add-todo-btn");
-const addProjectBtn = document.querySelector(".add-project-btn");
+const titleInput = document.querySelector("#title");
+const descriptionInput = document.querySelector("#description");
+const dueDateInput = document.querySelector("#dueDate");
+const priorityInput = document.querySelector("#priority");
+const addTodoBtn = document.querySelector("#addTodoBtn");
+const todoList = document.querySelector("#todoList");
+const projectList = document.querySelector(".project-list");
+const projectTitle = document.querySelector(".todos-header h2");
 
-console.log(addTodoBtn);
-console.log(addProjectBtn);
- addTodoBtn.addEventListener("click", () => {
-  console.log("Add Todo button clicked");
+addTodoBtn.addEventListener("click", () => {
+  if (!titleInput.value.trim()) return;
+
+  const newTodo = createTodo(
+    titleInput.value,
+    descriptionInput.value,
+    dueDateInput.value,
+    priorityInput.value
+  );
+
+  getCurrentProject().todos.push(newTodo);
+  saveToLocalStorage(getCurrentProject().name);
+  renderTodos(todoList);
+
+  titleInput.value = "";
+  descriptionInput.value = "";
+  dueDateInput.value = "";
+  priorityInput.value = "Low";
 });
 
-addProjectBtn.addEventListener("click", () => {
-  console.log("Add Project button clicked");
+projectList.addEventListener("click", e => {
+  if (e.target.tagName !== "LI") return;
+
+  setCurrentProject(e.target.textContent);
+  projectTitle.textContent = e.target.textContent;
+
+  document.querySelectorAll(".project-list li")
+    .forEach(li => li.classList.remove("active"));
+
+  e.target.classList.add("active");
+
+  renderTodos(todoList);
 });
 
-// ----- Todo Data Logic -----
-
-function createTodo(title, dueDate, priority) {
-  return {
-    id: Date.now(),       // unique id
-    title: title,
-    dueDate: dueDate,
-    priority: priority,
-    completed: false,
-  };
-}
-let todos = [];
-const testTodo = createTodo(
-  "Learn JavaScript",
-  "2026-02-10",
-  "High"
-);
-
-todos.push(testTodo);
-
-console.log(todos);
+loadFromLocalStorage(setCurrentProject);
+renderTodos(todoList);

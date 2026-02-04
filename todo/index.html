@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -7,14 +7,15 @@
 </head>
 <body>
 
+  <!-- Top Bar -->
   <header class="top-bar">
     <h1>My Todo</h1>
     <button class="add-project-btn">+ New Project</button>
   </header>
 
   <main class="app">
-    
-    <!-- Projects -->
+
+    <!-- Projects Sidebar -->
     <aside class="projects">
       <h2>Projects</h2>
       <ul class="project-list">
@@ -24,45 +25,39 @@
       </ul>
     </aside>
 
-    <!-- Todos -->
+    <!-- Todos Section -->
     <section class="todos">
+
       <div class="todos-header">
         <h2>Inbox</h2>
-        <button class="add-todo-btn">+ Add Todo</button>
+        <button id="addTodoBtn" class="add-todo-btn">+ Add Todo</button>
       </div>
 
-      <div class="todo-list">
+      <!-- Todo Inputs -->
+      <div class="todo-form">
+        <input type="text" id="title" placeholder="Todo title" />
+        <input type="text" id="description" placeholder="Description" />
+        <input type="date" id="dueDate" />
 
-        <div class="todo-card high">
-          <div class="todo-main">
-            <h3>Finish assignment</h3>
-            <span class="due-date">Due: 10 Feb</span>
-          </div>
-          <span class="priority">High</span>
-        </div>
+        <select id="priority">
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
 
-        <div class="todo-card medium">
-          <div class="todo-main">
-            <h3>Buy groceries</h3>
-            <span class="due-date">Due: 12 Feb</span>
-          </div>
-          <span class="priority">Medium</span>
-        </div>
-
-        <div class="todo-card low">
-          <div class="todo-main">
-            <h3>Watch tutorial</h3>
-            <span class="due-date">Due: 15 Feb</span>
-          </div>
-          <span class="priority">Low</span>
-        </div>
-
+        
       </div>
+
+      <!-- Todo List (JS will fill this) -->
+      <div class="todo-list" id="todoList"></div>
+
     </section>
 
   </main>
- 
- <script src="src/index.js"></script>
+
+  <!-- JS -->
+ <script type="module" src="src/index.js"></script>
+
 
 </body>
 </html>

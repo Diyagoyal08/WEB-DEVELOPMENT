@@ -1,4 +1,4 @@
-:root {
+ :root {
   --baby-pink: #fff0f3;
   --light-pink: #ffe5ec;
   --light-red: #ffb3c1;
@@ -8,6 +8,7 @@
   --shadow: rgba(0, 0, 0, 0.12);
 }
 
+/* ---------- RESET ---------- */
 * {
   margin: 0;
   padding: 0;
@@ -80,7 +81,7 @@ body {
   color: white;
 }
 
-/* ---------- TODOS ---------- */
+/* ---------- TODOS SECTION ---------- */
 .todos {
   flex: 1;
   background: var(--white);
@@ -105,14 +106,29 @@ body {
   cursor: pointer;
 }
 
-/* ---------- TODO CARDS ---------- */
+/* ---------- TODO FORM ---------- */
+.todo-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.todo-form input,
+.todo-form select {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--light-red);
+}
+
+/* ---------- TODO LIST ---------- */
 .todo-list {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-.todo-card {
+/* ---------- TODO ITEM ---------- */
+.todo-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -122,7 +138,8 @@ body {
   box-shadow: 0 6px 15px var(--shadow);
 }
 
-.todo-main h3 {
+/* Todo content */
+.todo-content h3 {
   color: var(--text-dark);
   margin-bottom: 5px;
 }
@@ -132,7 +149,8 @@ body {
   color: #777;
 }
 
-.priority {
+/* Priority badge */
+.priority-badge {
   padding: 6px 14px;
   border-radius: 14px;
   font-size: 0.8rem;
@@ -140,14 +158,49 @@ body {
 }
 
 /* ---------- PRIORITY COLORS ---------- */
-.todo-card.high .priority {
+.todo-item.priority-high .priority-badge {
   background: #e63946;
 }
 
-.todo-card.medium .priority {
+.todo-item.priority-medium .priority-badge {
   background: #f77f00;
 }
 
-.todo-card.low .priority {
+.todo-item.priority-low .priority-badge {
   background: #2a9d8f;
+}
+/* ---------- DELETE BUTTON ---------- */
+.delete-btn {
+  background: transparent;
+  border: 2px solid var(--dark-red);
+  color: var(--dark-red);
+  padding: 6px 14px;
+  border-radius: 14px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+  background: var(--dark-red);
+  color: white;
+  transform: scale(1.05);
+}
+
+.delete-btn:active {
+  transform: scale(0.95);
+}
+
+/* ---------- COMPLETED TODO ---------- */
+.todo-card.completed {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+.todo-card.completed .priority {
+  background: #ccc;
+}
+.todo-card.completed .delete-btn {
+  border-color: #ccc;
+  color: #ccc;
 }
