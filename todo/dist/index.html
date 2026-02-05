@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pink Todo App</title>
+  <link rel="stylesheet" href="../src/style.css" />
+</head>
+
+<body>
+
+<header class="top-bar">
+  <h1>My Todo</h1>
+</header>
+
+<main class="app">
+
+  <aside class="projects">
+    <h2>Projects</h2>
+    <ul class="project-list">
+      <li class="active">Inbox</li>
+      <li>College</li>
+      <li>Personal</li>
+    </ul>
+  </aside>
+
+  <section class="todos">
+
+    <div class="todos-header">
+      <h2 id="projectTitle">Inbox</h2>
+      <button id="addTodoBtn">Add Todo</button>
+    </div>
+
+    <!-- Inputs -->
+    <div class="inputs">
+      <input id="title" placeholder="Title"/>
+      <input id="description" placeholder="Description"/>
+      <input id="dueDate" type="date"/>
+      <select id="priority">
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+      </select>
+    </div>
+
+    <div id="todoList"></div>
+
+  </section>
+
+</main>
+
+<script type="module" src="../src/index.js"></script>
+
+</body>
+</html>

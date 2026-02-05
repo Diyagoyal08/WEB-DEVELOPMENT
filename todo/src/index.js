@@ -1,57 +1,52 @@
-import { createTodo } from "./logic/todo.js";
-import {
-  projects,
-  getCurrentProject,
-  setCurrentProject
-} from "./logic/project.js";
-import {
-  saveToLocalStorage,
-  loadFromLocalStorage
-} from "./storage/localStorage.js";
-import { renderTodos } from "./ui/render.js";
+ import { createTodo } from "./models/todoFactory.js";
+import { projects,getCurrentProject,setCurrentProject } from "./models/projectManager.js";
+import { saveProjects,loadProjects } from "./storage/localStorage.js";
+import { renderTodos } from "./ui/renderToDos.js";
 
-const titleInput = document.querySelector("#title");
-const descriptionInput = document.querySelector("#description");
-const dueDateInput = document.querySelector("#dueDate");
-const priorityInput = document.querySelector("#priority");
-const addTodoBtn = document.querySelector("#addTodoBtn");
-const todoList = document.querySelector("#todoList");
-const projectList = document.querySelector(".project-list");
-const projectTitle = document.querySelector(".todos-header h2");
+/* DOM */
+const title=document.querySelector("#title");
+const desc=document.querySelector("#description");
+const date=document.querySelector("#dueDate");
+const priority=document.querySelector("#priority");
+const btn=document.querySelector("#addTodoBtn");
+const projectList=document.querySelector(".project-list");
+const projectTitle=document.querySelector("#projectTitle");
 
-addTodoBtn.addEventListener("click", () => {
-  if (!titleInput.value.trim()) return;
+/* Load storage */
+loadProjects(projects);
+renderTodos();
 
-  const newTodo = createTodo(
-    titleInput.value,
-    descriptionInput.value,
-    dueDateInput.value,
-    priorityInput.value
+/* Add todo */
+btn.addEventListener("click",()=>{
+  if(!title.value.trim()) return;
+
+  const todo=createTodo(
+    title.value,
+    desc.value,
+    date.value,
+    priority.value
   );
 
-  getCurrentProject().todos.push(newTodo);
-  saveToLocalStorage(getCurrentProject().name);
-  renderTodos(todoList);
+  getCurrentProject().todos.push(todo);
+  saveProjects(projects);
+  renderTodos();
 
-  titleInput.value = "";
-  descriptionInput.value = "";
-  dueDateInput.value = "";
-  priorityInput.value = "Low";
+  title.value="";
+  desc.value="";
+  date.value="";
 });
 
-projectList.addEventListener("click", e => {
-  if (e.target.tagName !== "LI") return;
+/* Switch projects */
+projectList.addEventListener("click",(e)=>{
+  if(e.target.tagName!=="LI") return;
 
   setCurrentProject(e.target.textContent);
-  projectTitle.textContent = e.target.textContent;
+  projectTitle.textContent=e.target.textContent;
 
-  document.querySelectorAll(".project-list li")
-    .forEach(li => li.classList.remove("active"));
+  document.querySelectorAll("li")
+    .forEach(li=>li.classList.remove("active"));
 
   e.target.classList.add("active");
 
-  renderTodos(todoList);
+  renderTodos();
 });
-
-loadFromLocalStorage(setCurrentProject);
-renderTodos(todoList);
