@@ -1,54 +1,83 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Pink Todo App</title>
+  <title>Todo App</title>
+
+  <!-- IMPORTANT: webpack serves files from root -->
   <link rel="stylesheet" href="../src/style.css" />
 </head>
 
 <body>
 
-<header class="top-bar">
-  <h1>My Todo</h1>
-</header>
+  <!-- TOP BAR -->
+  <header class="top-bar">
+    <h1>My Todos</h1>
+    <button id="addProjectBtn">+ Project</button>
+  </header>
 
-<main class="app">
 
-  <aside class="projects">
-    <h2>Projects</h2>
-    <ul class="project-list">
-      <li class="active">Inbox</li>
-      <li>College</li>
-      <li>Personal</li>
-    </ul>
-  </aside>
+  <main class="app">
 
-  <section class="todos">
+    <!-- PROJECT SIDEBAR -->
+    <aside class="projects">
+      <h2>Projects</h2>
+      <ul class="project-list" id="projectList"></ul>
+    </aside>
 
-    <div class="todos-header">
-      <h2 id="projectTitle">Inbox</h2>
-      <button id="addTodoBtn">Add Todo</button>
-    </div>
 
-    <!-- Inputs -->
-    <div class="inputs">
-      <input id="title" placeholder="Title"/>
-      <input id="description" placeholder="Description"/>
-      <input id="dueDate" type="date"/>
-      <select id="priority">
-        <option>Low</option>
-        <option>Medium</option>
-        <option>High</option>
-      </select>
-    </div>
+    <!-- TODO SECTION -->
+    <section class="todos">
 
-    <div id="todoList"></div>
+      <div class="todos-header">
+        <h2 id="projectTitle">Inbox</h2>
+        <button class="add-todo-btn" id="addTodoBtn">
+          + Add Todo
+        </button>
+      </div>
 
-  </section>
 
-</main>
+      <!-- TODO FORM -->
+      <form class="todo-form" id="todoForm">
 
-<script type="module" src="../src/index.js"></script>
+        <input
+          id="title"
+          placeholder="Title"
+          required
+        />
+
+        <input
+          id="description"
+          placeholder="Description"
+        />
+
+        <input
+          id="dueDate"
+          type="date"
+        />
+
+        <select id="priority">
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+
+        <button type="submit">Add</button>
+      </form>
+
+
+      <!-- TODO LIST -->
+      <div class="todo-list" id="todoList"></div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Webpack bundle auto-injected -->
+  <script type="module" src="../src/index.js"></script>
 
 </body>
 </html>
+
+git 

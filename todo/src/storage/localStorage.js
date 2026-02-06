@@ -1,12 +1,10 @@
- export function saveProjects(projects){
-  localStorage.setItem("projects", JSON.stringify(projects));
+ const KEY = "todoProjects";
+
+export function save(projects) {
+  localStorage.setItem(KEY, JSON.stringify(projects));
 }
 
-export function loadProjects(projects){
-  const data=localStorage.getItem("projects");
-  if(!data) return;
-
-  const parsed=JSON.parse(data);
-  projects.length=0;
-  parsed.forEach(p=>projects.push(p));
+export function load() {
+  const data = localStorage.getItem(KEY);
+  return data ? JSON.parse(data) : null;
 }
