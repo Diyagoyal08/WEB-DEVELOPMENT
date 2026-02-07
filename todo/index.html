@@ -1,81 +1,37 @@
- <!DOCTYPE html>
-<html lang="en">
+ <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pink & Red To-Do App</title>
 
-  <title>Todo App</title>
 
-  <!-- CSS (works now, and later via Webpack) -->
-  <link rel="stylesheet" href="./style.css" />
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+
+<!-- CSS -->
+<link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-  <!-- TOP BAR -->
-  <header class="top-bar">
-    <h1>My Todos</h1>
-    <button id="addProjectBtn" type="button">+ Project</button>
-  </header>
 
-  <main class="app">
+<div class="app">
+<h1>My To-Do 💖</h1>
 
-    <!-- PROJECT SIDEBAR -->
-    <aside class="projects">
-      <h2>Projects</h2>
-      <ul class="project-list" id="projectList"></ul>
-    </aside>
 
-    <!-- TODO SECTION -->
-    <section class="todos">
+<div class="input-row">
+<input type="text" id="todoInput" placeholder="Add a cute task…" />
+<button id="addBtn">+</button>
+</div>
 
-      <div class="todos-header">
-        <h2 id="projectTitle">Inbox</h2>
-        <button class="add-todo-btn" id="addTodoBtn" type="button">
-          + Add Todo
-        </button>
-      </div>
 
-      <!-- TODO FORM -->
-      <form class="todo-form" id="todoForm">
+<ul id="todoList"></ul>
 
-        <input
-          id="title"
-          name="title"
-          placeholder="Title"
-          required
-        />
 
-        <input
-          id="description"
-          name="description"
-          placeholder="Description"
-        />
+<footer>Stay productive & pink ✨</footer>
+</div>
 
-        <input
-          id="dueDate"
-          name="dueDate"
-          type="date"
-        />
-
-        <select id="priority" name="priority">
-          <option value="low">Low</option>
-          <option value="medium">Medium</option>
-          <option value="high">High</option>
-        </select>
-
-        <button type="submit">Add</button>
-      </form>
-
-      <!-- TODO LIST -->
-      <div class="todo-list" id="todoList"></div>
-
-    </section>
-
-  </main>
-
-  <!-- JS entry point -->
-  <script type="module" src="./index.js"></script>
-
+<!-- JS -->
+<script src="script.js"></script>
 </body>
 </html>

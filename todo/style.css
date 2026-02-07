@@ -1,234 +1,108 @@
  :root {
-  --baby-pink: #fff0f3;
-  --light-pink: #ffe5ec;
-  --light-red: #ffb3c1;
-  --dark-red: #e5383b;
-  --text-dark: #4a2c2a;
-  --white: #ffffff;
-  --shadow: rgba(0, 0, 0, 0.12);
+--pink: #ff5fa2;
+--deep-pink: #ff2f92;
+--red: #e63946;
+--light-bg: #fff0f6;
+--white: #ffffff;
+--text: #3a0f23;
 }
 
-/* ---------- RESET ---------- */
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+font-family: 'Poppins', sans-serif;
 }
+
 
 body {
-  min-height: 100vh;
-  background: linear-gradient(135deg, var(--baby-pink), var(--light-red));
-  display: flex;
-  flex-direction: column;
+min-height: 100vh;
+background: linear-gradient(135deg, var(--pink), var(--red));
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
-/* ---------- TOP BAR ---------- */
-.top-bar {
-  background: var(--white);
-  padding: 20px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 4px 10px var(--shadow);
-}
-
-.top-bar h1 {
-  color: var(--dark-red);
-}
-
-.top-bar button {
-  background: var(--dark-red);
-  color: white;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-
-.top-bar button:hover {
-  opacity: 0.9;
-}
-
-/* ---------- MAIN APP ---------- */
 .app {
-  flex: 1;
-  display: flex;
-  padding: 30px;
-  gap: 30px;
+background: var(--white);
+width: 380px;
+max-width: 90%;
+border-radius: 20px;
+padding: 24px;
+box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
-/* ---------- PROJECTS ---------- */
-.projects {
-  width: 220px;
-  background: var(--light-pink);
-  border-radius: 20px;
-  padding: 20px;
-  overflow-y: auto;
+
+.app h1 {
+text-align: center;
+color: var(--red);
+margin-bottom: 16px;
 }
 
-.projects h2 {
-  margin-bottom: 15px;
-  color: var(--text-dark);
+
+.input-row {
+display: flex;
+gap: 10px;
+margin-bottom: 20px;
 }
 
-.project-list li {
-  list-style: none;
-  padding: 10px 15px;
-  border-radius: 12px;
-  margin-bottom: 10px;
-  cursor: pointer;
-  transition: 0.2s ease;
+
+.input-row input {
+flex: 1;
+padding: 12px 14px;
+border-radius: 12px;
+border: 2px solid var(--pink);
+outline: none;
+}
+.input-row button {
+background: linear-gradient(135deg, var(--pink), var(--red));
+border: none;
+color: white;
+padding: 0 16px;
+border-radius: 12px;
+cursor: pointer;
+font-size: 18px;
 }
 
-.project-list li.active,
-.project-list li:hover {
-  background: var(--light-red);
-  color: white;
+
+ul {
+list-style: none;
+max-height: 300px;
+overflow-y: auto;
 }
 
-/* ---------- TODOS SECTION ---------- */
-.todos {
-  flex: 1;
-  background: var(--white);
-  border-radius: 20px;
-  padding: 25px;
-  box-shadow: 0 20px 40px var(--shadow);
-  display: flex;
-  flex-direction: column;
+
+li {
+background: var(--light-bg);
+margin-bottom: 10px;
+padding: 12px 14px;
+border-radius: 12px;
+display: flex;
+justify-content: space-between;
 }
 
-.todos-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
+
+li.completed {
+text-decoration: line-through;
+opacity: 0.6;
 }
 
-.add-todo-btn {
-  background: var(--light-red);
-  border: none;
-  padding: 10px 18px;
-  border-radius: 20px;
-  color: white;
-  cursor: pointer;
-  transition: 0.2s ease;
+.actions button {
+border: none;
+background: transparent;
+cursor: pointer;
+font-size: 16px;
 }
 
-.add-todo-btn:hover {
-  background: var(--dark-red);
-}
 
-/* ---------- TODO FORM ---------- */
-.todo-form {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-}
+.actions .done { color: var(--pink); }
+.actions .delete { color: var(--red); }
 
-.todo-form input,
-.todo-form select {
-  padding: 8px 10px;
-  border-radius: 10px;
-  border: 1px solid var(--light-red);
-}
 
-.todo-form input:focus,
-.todo-form select:focus {
-  border-color: var(--dark-red);
-  outline: none;
-}
-
-/* ---------- TODO LIST ---------- */
-.todo-list {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  flex: 1;
-  overflow-y: auto;
-}
-
-/* ---------- TODO CARD ---------- */
-.todo-card {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 22px;
-  border-radius: 16px;
-  background: var(--baby-pink);
-  box-shadow: 0 6px 15px var(--shadow);
-}
-
-.todo-main h3 {
-  color: var(--text-dark);
-  margin-bottom: 5px;
-}
-
-.due-date {
-  font-size: 0.85rem;
-  color: #777;
-}
-
-/* ---------- PRIORITY BADGE ---------- */
-.priority {
-  padding: 6px 14px;
-  border-radius: 14px;
-  font-size: 0.8rem;
-  color: white;
-}
-
-/* ---------- PRIORITY COLORS ---------- */
-.todo-card.high .priority {
-  background: #e63946;
-}
-
-.todo-card.medium .priority {
-  background: #f77f00;
-}
-
-.todo-card.low .priority {
-  background: #2a9d8f;
-}
-
-/* ---------- DELETE BUTTON ---------- */
-.delete-btn {
-  background: transparent;
-  border: 2px solid var(--dark-red);
-  color: var(--dark-red);
-  padding: 6px 14px;
-  border-radius: 14px;
-  font-size: 0.8rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.delete-btn:hover {
-  background: var(--dark-red);
-  color: white;
-  transform: scale(1.05);
-}
-
-.delete-btn:active {
-  transform: scale(0.95);
-}
-
-/* ---------- COMPLETED TODO ---------- */
-.todo-card.completed {
-  opacity: 0.6;
-  text-decoration: line-through;
-}
-
-.todo-card.completed .priority {
-  background: #ccc;
-}
-
-.todo-card.completed .delete-btn {
-  border-color: #ccc;
-  color: #ccc;
-}
-
-.todo-card.completed .delete-btn:hover {
-  background: #ccc;
-  color: white;
+footer {
+text-align: center;
+margin-top: 14px;
+font-size: 12px;
+color: #888;
 }
