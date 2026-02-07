@@ -1,35 +1,36 @@
  import { createTodo } from "./todoFactory.js";
 
 let projects = [];
-let currentProject = null;
+let currentProjectName = null;
 
-// ---------- DEFAULT DATA ----------
+/* ---------- DEFAULT DATA ---------- */
 function defaultProjects() {
   return [
     {
       name: "Inbox",
       todos: [
-        createTodo("Welcome Task", "This is your first todo", "", "Low"),
-        createTodo("Click checkbox", "Try completing a task", "", "Medium"),
+        createTodo("Welcome Task", "This is your first todo", "", "low"),
+        createTodo("Click checkbox", "Try completing a task", "", "medium"),
       ],
     },
     {
       name: "College",
       todos: [
-        createTodo("Finish Assignment", "Web dev work", "", "High"),
+        createTodo("Finish Assignment", "Web dev work", "", "high"),
       ],
     },
   ];
 }
 
-// ---------- INIT ----------
+/* ---------- INIT ---------- */
 export function setProjects(data) {
-  if (!data || data.length === 0) {
+  if (!Array.isArray(data) || data.length === 0) {
     projects = defaultProjects();
   } else {
     projects = data;
   }
-  currentProject = projects[0].name;
+
+  currentProjectName = projects[0]?.name || null;
 }
 
 export function getProjects() {
@@ -37,33 +38,48 @@ export function getProjects() {
 }
 
 export function getCurrentProject() {
-  return projects.find((p) => p.name === currentProject);
+  return projects.find((p) => p.name === currentProjectName) || null;
 }
 
 export function setCurrentProject(name) {
-  currentProject = name;
+  if (projects.some((p) => p.name === name)) {
+    currentProjectName = name;
+  }
 }
 
-// ---------- ACTIONS ----------
+/* ---------- ACTIONS ---------- */
 export function addProject(name) {
-  if (!name.trim()) return;
+  if (!name || !name.trim()) return;
 
-  projects.push({
-    name,
+  const project = {
+    name: name.trim(),
     todos: [],
-  });
+  };
+
+  projects.push(project);
+  currentProjectName = project.name;
 }
 
 export function addTodo(todo) {
-  getCurrentProject().todos.push(todo);
+  const project = getCurrentProject();
+  if (!project) return;
+
+  project.todos.push(todo);
 }
 
 export function deleteTodo(id) {
   const project = getCurrentProject();
+  if (!project) return;
+
   project.todos = project.todos.filter((t) => t.id !== id);
 }
 
 export function toggleTodo(id) {
-  const todo = getCurrentProject().todos.find((t) => t.id === id);
+  const project = getCurrentProject();
+  if (!project) return;
+
+  const todo = project.todos.find((t) => t.id === id);
+  if (!todo) return;
+
   todo.completed = !todo.completed;
 }

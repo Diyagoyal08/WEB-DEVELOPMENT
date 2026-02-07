@@ -6,27 +6,25 @@
   addTodo,
   deleteTodo,
   toggleTodo,
-} from "../models/projectsManager.js";
+} from "./projectsManager.js";
 
-import { createTodo } from "../models/todoFactory.js";
-import { save } from "../storage/localStorage.js";
+import { createTodo } from "./todoFactory.js";
+import { saveProjects } from "./localStorage.js";
 
-// ---------- ELEMENTS ----------
+/* ---------- ELEMENTS ---------- */
 const projectList = document.querySelector("#projectList");
 const todoList = document.querySelector("#todoList");
 const projectTitle = document.querySelector("#projectTitle");
 
-const addTaskBtn = document.querySelector("#addTodoBtn");
-const addProjectBtn = document.querySelector("#newProjectBtn");
-
+const addProjectBtn = document.querySelector("#addProjectBtn");
 const todoForm = document.querySelector("#todoForm");
 
 const titleInput = document.querySelector("#title");
-const descInput = document.querySelector("#desc");
-const dateInput = document.querySelector("#date");
+const descInput = document.querySelector("#description");
+const dateInput = document.querySelector("#dueDate");
 const priorityInput = document.querySelector("#priority");
 
-// ---------- PROJECT RENDER ----------
+/* ---------- PROJECT RENDER ---------- */
 export function renderProjects() {
   projectList.innerHTML = "";
 
@@ -34,61 +32,73 @@ export function renderProjects() {
     const li = document.createElement("li");
     li.textContent = project.name;
 
-    li.onclick = () => {
+    if (getCurrentProject()?.name === project.name) {
+      li.classList.add("active");
+    }
+
+    li.addEventListener("click", () => {
       setCurrentProject(project.name);
       renderAll();
-    };
+    });
 
     projectList.appendChild(li);
   });
 }
 
-// ---------- TODO RENDER ----------
+/* ---------- TODO RENDER ---------- */
 export function renderTodos() {
   const project = getCurrentProject();
+  if (!project) return;
 
   projectTitle.textContent = project.name;
   todoList.innerHTML = "";
 
   project.todos.forEach((todo) => {
     const card = document.createElement("div");
-    card.className = `todo-item priority-${todo.priority}`;
+    card.classList.add("todo-card", todo.priority);
 
-    if (todo.completed) card.classList.add("completed");
+    if (todo.completed) {
+      card.classList.add("completed");
+    }
 
-    const text = document.createElement("div");
-    text.className = "todo-content";
-    text.innerHTML = `
-        <h3>${todo.title}</h3>
-        <span class="due-date">${todo.dueDate || ""}</span>
-    `;
+    const main = document.createElement("div");
+    main.className = "todo-main";
 
-    const badge = document.createElement("span");
-    badge.className = "priority-badge";
-    badge.textContent = todo.priority;
+    const title = document.createElement("h3");
+    title.textContent = todo.title;
+
+    const dueDate = document.createElement("span");
+    dueDate.className = "due-date";
+    dueDate.textContent = todo.dueDate || "";
+
+    main.append(title, dueDate);
+
+    const priority = document.createElement("span");
+    priority.className = "priority";
+    priority.textContent = todo.priority;
 
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.checked = todo.completed;
-    checkbox.onclick = () => {
+    checkbox.addEventListener("change", () => {
       toggleTodo(todo.id);
       renderAll();
-    };
+    });
 
-    const del = document.createElement("button");
-    del.className = "delete-btn";
-    del.textContent = "Delete";
-    del.onclick = () => {
+    const delBtn = document.createElement("button");
+    delBtn.className = "delete-btn";
+    delBtn.textContent = "Delete";
+    delBtn.addEventListener("click", () => {
       deleteTodo(todo.id);
       renderAll();
-    };
+    });
 
-    card.append(checkbox, text, badge, del);
+    card.append(checkbox, main, priority, delBtn);
     todoList.appendChild(card);
   });
 }
 
-// ---------- FORM SUBMIT ----------
+/* ---------- FORM SUBMIT ---------- */
 todoForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -102,24 +112,22 @@ todoForm.addEventListener("submit", (e) => {
   );
 
   addTodo(todo);
-
   todoForm.reset();
-
   renderAll();
 });
 
-// ---------- NEW PROJECT ----------
-addProjectBtn.onclick = () => {
+/* ---------- NEW PROJECT ---------- */
+addProjectBtn.addEventListener("click", () => {
   const name = prompt("Project name?");
   if (!name) return;
 
   addProject(name);
   renderAll();
-};
+});
 
-// ---------- MASTER RENDER ----------
+/* ---------- MASTER RENDER ---------- */
 export function renderAll() {
   renderProjects();
   renderTodos();
-  save(getProjects());
+  saveProjects(getProjects());
 }

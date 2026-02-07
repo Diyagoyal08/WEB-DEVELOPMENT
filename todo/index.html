@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Todo App</title>
 
-  <!-- IMPORTANT: webpack serves files from root -->
-  <link rel="stylesheet" href="../src/style.css" />
+  <!-- CSS (works now, and later via Webpack) -->
+  <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
@@ -13,9 +15,8 @@
   <!-- TOP BAR -->
   <header class="top-bar">
     <h1>My Todos</h1>
-    <button id="addProjectBtn">+ Project</button>
+    <button id="addProjectBtn" type="button">+ Project</button>
   </header>
-
 
   <main class="app">
 
@@ -25,38 +26,39 @@
       <ul class="project-list" id="projectList"></ul>
     </aside>
 
-
     <!-- TODO SECTION -->
     <section class="todos">
 
       <div class="todos-header">
         <h2 id="projectTitle">Inbox</h2>
-        <button class="add-todo-btn" id="addTodoBtn">
+        <button class="add-todo-btn" id="addTodoBtn" type="button">
           + Add Todo
         </button>
       </div>
-
 
       <!-- TODO FORM -->
       <form class="todo-form" id="todoForm">
 
         <input
           id="title"
+          name="title"
           placeholder="Title"
           required
         />
 
         <input
           id="description"
+          name="description"
           placeholder="Description"
         />
 
         <input
           id="dueDate"
+          name="dueDate"
           type="date"
         />
 
-        <select id="priority">
+        <select id="priority" name="priority">
           <option value="low">Low</option>
           <option value="medium">Medium</option>
           <option value="high">High</option>
@@ -65,7 +67,6 @@
         <button type="submit">Add</button>
       </form>
 
-
       <!-- TODO LIST -->
       <div class="todo-list" id="todoList"></div>
 
@@ -73,9 +74,8 @@
 
   </main>
 
-
-  <!-- Webpack bundle auto-injected -->
-  <script type="module" src="../src/index.js"></script>
+  <!-- JS entry point -->
+  <script type="module" src="./index.js"></script>
 
 </body>
 </html>

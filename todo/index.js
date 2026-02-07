@@ -1,12 +1,14 @@
  console.log("INDEX LOADED");
 
-import { load } from "./storage/localStorage.js";
-import { setProjects } from "./models/projectsManager.js";
-import { renderAll } from "./ui/renderToDos.js";
+import { loadProjects } from "./localStorage.js";
+import { setProjects } from "./projectsManager.js";
+import { renderAll } from "./renderTodos.js";
 
-// Load data
-const stored = load();
-setProjects(stored);
+/* ---------- APP INIT ---------- */
 
-// Render UI
+// Load saved data
+const storedProjects = loadProjects();
+setProjects(storedProjects);
+
+// Initial render
 renderAll();

@@ -1,10 +1,18 @@
- const KEY = "todoProjects";
+ const STORAGE_KEY = "todoProjects";
 
-export function save(projects) {
-  localStorage.setItem(KEY, JSON.stringify(projects));
+export function saveProjects(projects) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(projects));
 }
 
-export function load() {
-  const data = localStorage.getItem(KEY);
-  return data ? JSON.parse(data) : null;
+export function loadProjects() {
+  const data = localStorage.getItem(STORAGE_KEY);
+
+  if (!data) return null;
+
+  try {
+    return JSON.parse(data);
+  } catch (error) {
+    console.error("Failed to parse projects from localStorage", error);
+    return null;
+  }
 }

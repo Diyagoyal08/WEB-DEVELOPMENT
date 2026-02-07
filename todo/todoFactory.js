@@ -1,6 +1,11 @@
- export function createTodo(title, description, dueDate, priority) {
+ export function createTodo(
+  title,
+  description = "",
+  dueDate = "",
+  priority = "low"
+) {
   return {
-    id: Date.now(),
+    id: crypto.randomUUID(),
     title,
     description,
     dueDate,
