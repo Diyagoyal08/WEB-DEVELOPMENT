@@ -1,0 +1,168 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Background */
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #a7d8ff, #1e3c72);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+/* App Container */
+.app {
+  width: 360px;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 32px;
+  margin-bottom: 12px;
+  color: #cfefff;
+}
+
+.search-box {
+  display: flex;
+  gap: 8px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: #111;
+  color: white;
+}
+
+.search-box button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #87cefa;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.search-box button:hover {
+  background: #b5e3ff;
+}
+
+/* Weather Card */
+.weather-card {
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* Top */
+.top {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.top h2 {
+  font-size: 24px;
+}
+
+.top p {
+  color: #b0dfff;
+}
+
+/* Weather Info */
+.weather-info {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.temp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+#temperature {
+  font-size: 52px;
+  font-weight: bold;
+}
+
+#weatherIcon {
+  width: 60px;
+  height: 60px;
+}
+
+#description {
+  margin-top: 8px;
+  font-size: 18px;
+  color: #cceaff;
+}
+
+/* Details Grid */
+.details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail {
+  text-align: center;
+  background: #111;
+  padding: 12px;
+  border-radius: 12px;
+  width: 30%;
+}
+
+.detail p {
+  font-size: 13px;
+  color: #9fd8ff;
+}
+
+.detail span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+/* Weather Backgrounds */
+
+body.clear {
+  background: linear-gradient(135deg, #87cefa, #000);
+}
+
+body.clouds {
+  background: linear-gradient(135deg, #b0c4de, #000);
+}
+
+body.rain {
+  background: linear-gradient(135deg, #4a6fa5, #000);
+}
+
+body.thunderstorm {
+  background: linear-gradient(135deg, #2c3e50, #000);
+}
+
+body.snow {
+  background: linear-gradient(135deg, #e6f7ff, #000);
+}
+
+body.mist {
+  background: linear-gradient(135deg, #a9a9a9, #000);
+}
+
